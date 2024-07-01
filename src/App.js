@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import {
+  AboutUs,
+  Chef,
+  FindUs,
+  Footer,
+  Gallery,
+  Header,
+  Intro,
+  Laurels,
+  SpecialMenu,
+} from "./container";
+import { Navbar } from "./components";
+import "./App.css";
+import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
+import Anasayfa from "./pages/Anasayfa/Anasayfa";
+import Yiyecek from "./pages/Yiyecek/Yiyecek";
+import Icecekler from "./pages/Icecekler/Icecekler";
+
+const App = () => (
+  <Router>
+    <Routes>
+      <Route exact path="/" Component={Anasayfa} />
+      <Route exact path="/yiyecekler" Component={Yiyecek} />
+      <Route exact path="/icecekler" Component={Icecekler} />
+    </Routes>
+  </Router>
+);
 
 export default App;
